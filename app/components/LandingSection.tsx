@@ -23,16 +23,20 @@ export default function LandingSection() {
         })}
       </div>
       <div className="relative z-10 text-center">
-        <h1 className="text-5xl font-bold text-white mb-4 drop-shadow-lg">STEM ZNANJE WARMUP</h1>
-        <div className="mb-8">
-          {/* Placeholder for logo */}
-          <div className="w-32 h-32 bg-white rounded-full mx-auto mb-4 shadow-lg"></div>
-        </div>
+        <h1 className="text-7xl font-bold text-white mb-4 drop-shadow-lg">STEM ZNANJE WARMUP</h1>
         <p className="text-xl text-white max-w-2xl mx-auto drop-shadow-md">
-          Dobrodošli na 5-dnevno natjecanje iz matematike, programiranja i CTF-a. 
-          Testirajte svoje vještine, učite nove stvari i zabavite se u ovom 
-          uzbudljivom STEM izazovu!
+          Dobrodošli na 5-dnevno zimsko zagrijavanje za STEM Games. Svaki dan druga kategorija, pa složite svoj tim i pokažite svoje znanje.
+          Očekuju vas novi i zanimljivi zadatci iz svih kategorija, a najbolji će osvojiti vrijedne nagrade.
         </p>
+        <div className="mb-8">
+        <Image 
+              src="/susfer-logo.png" 
+              alt="SUSFER Logo" 
+              width={200} 
+              height={200} 
+              className="mx-auto mb-4"
+            />
+        </div>
       </div>
     </div>
   )
