@@ -32,8 +32,8 @@ export default function LandingSection() {
         <Image 
               src="/susfer-logo.png" 
               alt="SUSFER Logo" 
-              width={200} 
-              height={200} 
+              width={300} 
+              height={300} 
               className="mx-auto mb-4"
             />
         </div>

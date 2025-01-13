@@ -30,7 +30,7 @@ export default function FAQSection() {
   return (
     <div className="py-16 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-8">Često Postavljena Pitanja</h2>
+        <h2 className="text-3xl font-bold text-center mb-8">FAQ</h2>
         <Accordion type="single" collapsible>
           {faqData.map((item, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
