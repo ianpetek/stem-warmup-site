@@ -28,12 +28,12 @@ export default function LandingSection() {
         Dobrodošli na 5-dnevno zimsko zagrijavanje za STEM Games. Svaki dan druga kategorija, pa složite svoj tim i pokažite svoje znanje.
         Očekuju vas novi i zanimljivi zadatci iz svih kategorija, a najbolji će osvojiti vrijedne nagrade.
         </p>
-        <div className="mb-8">
+        <div className="mb-8 mt-8" >
         <Image 
               src="/susfer-logo.png" 
               alt="SUSFER Logo" 
-              width={300} 
-              height={300} 
+              width={200} 
+              height={200} 
               className="mx-auto mb-4"
             />
         </div>
