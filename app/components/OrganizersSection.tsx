@@ -30,8 +30,8 @@ export default function OrganizersSection() {
             <Image 
               src="/xfer-logo.png" 
               alt="XFer Logo" 
-              width={200} 
-              height={200} 
+              width={150} 
+              height={150} 
               className="mx-auto mb-4"
             />
             <h3 className="text-xl font-semibold">XFer</h3>

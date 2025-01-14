@@ -22,11 +22,11 @@ export default function LandingSection() {
           );
         })}
       </div>
-      <div className="relative z-10 text-center">
-        <h1 className="text-7xl font-bold text-white mb-4 drop-shadow-lg">STEM ZNANJE WARMUP</h1>
-        <p className="text-xl text-white max-w-2xl mx-auto drop-shadow-md">
-          Dobrodošli na 5-dnevno zimsko zagrijavanje za STEM Games. Svaki dan druga kategorija, pa složite svoj tim i pokažite svoje znanje.
-          Očekuju vas novi i zanimljivi zadatci iz svih kategorija, a najbolji će osvojiti vrijedne nagrade.
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">STEM ZNANJE WARMUP</h1>
+        <p className="text-lg sm:text-xl md:text-2xl text-white max-w-2xl mx-auto drop-shadow-md">
+        Dobrodošli na 5-dnevno zimsko zagrijavanje za STEM Games. Svaki dan druga kategorija, pa složite svoj tim i pokažite svoje znanje.
+        Očekuju vas novi i zanimljivi zadatci iz svih kategorija, a najbolji će osvojiti vrijedne nagrade.
         </p>
         <div className="mb-8">
         <Image 
@@ -41,4 +41,3 @@ export default function LandingSection() {
     </div>
   )
 }
-
