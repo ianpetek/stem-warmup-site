@@ -23,17 +23,9 @@ export default function PrijavljeniPage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      // Access the token from environment variables
-      const token = process.env.NEXT_PUBLIC_AUTH0_API;
-      if (!token) {
-        setError("API token is missing.");
-        return;
-      }
-
       const options: AxiosRequestConfig = {
         method: "GET",
-        url: "https://auth.susfer.org/api/v2/users",
-        headers: { authorization: `Bearer ${token}` },
+        url: "/api/getUsers",
       };
 
       try {
