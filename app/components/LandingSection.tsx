@@ -25,8 +25,7 @@ export default function LandingSection() {
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">STEM ZNANJE WARMUP</h1>
         <p className="text-lg sm:text-xl md:text-2xl text-white max-w-2xl mx-auto drop-shadow-md">
-        Dobrodošli na 5-dnevno zimsko zagrijavanje za STEM Games. Svaki dan druga kategorija, pa složite svoj tim i pokažite svoje znanje.
-        Očekuju vas novi i zanimljivi zadatci iz svih kategorija, a najbolji će osvojiti vrijedne nagrade.
+        <strong>Dobrodošli na 5-dnevno zimsko zagrijavanje za STEM Games!</strong><br/>Svaki dan donosimo novu kategoriju u kojoj možete zajedno sa svojim timom pokazati svoje znanje i vještine.<br/>Pripremili smo izazovne i zanimljive zadatke iz svih STEM područja, a najuspješniji natjecatelji osvojit će vrijedne nagrade.
         </p>
         <div className="mb-8 mt-8" >
         <Image 
