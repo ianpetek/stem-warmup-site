@@ -1,17 +1,23 @@
 import { NextResponse } from 'next/server';
+import { getSession } from '@auth0/nextjs-auth0/edge'; // Note the /edge import
 
-export function middleware(request: Request) {
-  const url = new URL(request.url);
+export async function middleware(req) {
+  const url = new URL(req.url);
   const pathname = url.pathname; // e.g., /dan/1
+  const res = new NextResponse();
+  const session = await getSession(req, res);
 
-  // log to test
-  console.log('middleware', pathname);
+  //const loggedIn = session !== null;
+  const loggedIn = session !== null && session !== undefined;
 
   // Match dynamic routes (e.g., /dan/1, /dan/2)
   const match = pathname.match(/^\/dan\/(\d+)$/);
   if (match) {
+    if(!loggedIn){
+      return NextResponse.redirect(new URL('/api/auth/login', req.url));
+    }
     const pageId = match[1];
-    const eventDates: Record<string, string> = {
+    const eventDates = {
       1: '2025-01-20',
       2: '2025-01-21',
       3: '2025-01-22',
@@ -26,7 +32,7 @@ export function middleware(request: Request) {
 
       // Redirect if the date has not yet been reached
       if (today < allowedDate) {
-        return NextResponse.redirect(new URL('/', request.url)); // Redirect to homepage or another page
+        return NextResponse.redirect(new URL('/', req.url)); // Redirect to homepage or another page
       }
     }
   }
