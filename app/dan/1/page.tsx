@@ -117,6 +117,14 @@ export default function ProgramiranjeDay() {
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, []);
 
+
+  const inputText = 
+`4 5
+1 2 3 4 5
+5 4 3 2 1`;
+
+  const outputText = `9 9 9 9 9`;
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800">
       <FloatingCircles />
@@ -128,10 +136,60 @@ export default function ProgramiranjeDay() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Opis Zadatka</h2>
             <p className="text-gray-700">
-              Dobrodošli na prvi dan STEM ZNANJE WARMUP natjecanja! Današnji zadatak testira vaše vještine programiranja.
-              Potrebno je implementirati algoritam za sortiranje niza brojeva koristeći metodu "bubble sort".
-              Vaš kod treba primiti niz cijelih brojeva kao ulaz, sortirati ga u uzlaznom redoslijedu, i vratiti sortirani niz.
+              Zadan je težinski neusmjereni graf. Graf ima <strong>n</strong> čvorova i <strong>m</strong> bridova.
+              Vi se nalazite u čvoru <strong>st</strong>, a kristal znanja se nalazi u čvoru <strong>em</strong>.
+              Zadatak je jednostavan; pronađite najkraći put od <strong>st</strong> do <strong>em</strong>, ili javite da takav put ne postoji.<br /><br />
+
+              <strong>Ulazni podaci</strong><br />
+              Prva linija sadrži dva cijela broja razdvojena razmakom - <strong>n</strong> i <strong>m</strong>. <br />
+              Sljedećih <strong>m</strong> linija opisuje bridove u grafu. <strong>i</strong>-ta linija sadrži tri cijela broja razdvojena razmakom - <strong>u_i</strong>, <strong>v_i</strong>, <strong>x_i</strong>. Linija označava da postoji brid od čvora <strong>u_i</strong> do <strong>v_i</strong> težine 2^(<strong>x_i</strong>)
+              Zadnja linija sadrži dva cijela broja, <strong>st</strong> i <strong>em</strong>, čvor u kojem se vi nalazite i čvor u kojem se nalazi kristal, redom.
+              Bridovi su označeni brojevima od 1 do <strong>n</strong>. Graf je jednostavan. <br /> <br />
+
+              <strong>Izlazni podaci</strong><br />
+              U prvom retku ispišite ostatak dijeljenja duljine najkraćeg puta s <strong>1000000007 (10^9+7)</strong> ako on postoji, a <strong>"GAMES"</strong> inače.
+              Ako put postoji, u drugi redak ispišite cijeli broj <strong>k</strong> - broj čvorova u najkraćem putu od čvora <strong>st</strong> do čvora <strong>em</strong>.
+              U treći redak ispišite <strong>k</strong> razmakom odijeljenih cijelih brojeva, oznake čvorova u najkraćem putu redom kojim ih posjećujete. Prvi čvor mora biti <strong>st</strong>, a zadnji <strong>em</strong>.
+              Ako postoji više najkraćih puteva, ispišite bilo koji.
             </p>
+
+            <div style={{ marginBottom: "20px", marginTop: "20px" }}>
+                <h3 style={{ margin: 0, padding: "10px", backgroundColor: "#333", color: "#fff", fontSize: "18px" }}>
+                  Input
+                </h3>
+                <pre
+                  style={{
+                    margin: 0,
+                    padding: "10px",
+                    backgroundColor: "#eaeaea",
+                    border: "1px solid #ccc",
+                    fontSize: "16px",
+                    lineHeight: "1.5",
+                    whiteSpace: "pre-wrap", // Ensures line breaks are preserved
+                  }}
+                >
+                  {inputText}
+                </pre>
+              </div>
+
+              <div style={{ marginBottom: "20px" }}>
+                <h3 style={{ margin: 0, padding: "10px", backgroundColor: "#333", color: "#fff", fontSize: "18px" }}>
+                  Output
+                </h3>
+                <pre
+                  style={{
+                    margin: 0,
+                    padding: "10px",
+                    backgroundColor: "#eaeaea",
+                    border: "1px solid #ccc",
+                    fontSize: "16px",
+                    lineHeight: "1.5",
+                    whiteSpace: "pre-wrap", // Ensures line breaks are preserved
+                  }}
+                >
+                  {outputText}
+                </pre>
+              </div>
           </section>
 
           <form className="space-y-6" onSubmit={onSubmit}>
@@ -169,7 +227,7 @@ export default function ProgramiranjeDay() {
             <Button type="submit" className="w-full" disabled={isLoading || evaluating}> {(isLoading || evaluating) ? 'Evaluating...' : 'Predaj Rješenje'}</Button>
           </form>
           <div className="mt-8">
-          <VerdictDisplay data={data} error={error} evaluating={evaluating} />
+            <VerdictDisplay data={data} error={error} evaluating={evaluating} />
           </div>
         </div>
       </div>
