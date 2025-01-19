@@ -119,11 +119,26 @@ export default function ProgramiranjeDay() {
 
 
   const inputText = 
-`4 5
-1 2 3 4 5
-5 4 3 2 1`;
+`4 4
+1 4 2
+1 2 0
+2 3 0
+3 4 0
+1 4`;
 
-  const outputText = `9 9 9 9 9`;
+const outputText = 
+`3
+4
+1 2 3 4`;
+
+const inputText2 = 
+`4 2
+1 2 0
+3 4 1
+1 4`;
+
+const outputText2 = 
+`GAMES`;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800">
@@ -188,6 +203,44 @@ export default function ProgramiranjeDay() {
                   }}
                 >
                   {outputText}
+                </pre>
+              </div>
+
+              <div style={{ marginBottom: "20px", marginTop: "20px" }}>
+                <h3 style={{ margin: 0, padding: "10px", backgroundColor: "#333", color: "#fff", fontSize: "18px" }}>
+                  Input
+                </h3>
+                <pre
+                  style={{
+                    margin: 0,
+                    padding: "10px",
+                    backgroundColor: "#eaeaea",
+                    border: "1px solid #ccc",
+                    fontSize: "16px",
+                    lineHeight: "1.5",
+                    whiteSpace: "pre-wrap", // Ensures line breaks are preserved
+                  }}
+                >
+                  {inputText2}
+                </pre>
+              </div>
+
+              <div style={{ marginBottom: "20px" }}>
+                <h3 style={{ margin: 0, padding: "10px", backgroundColor: "#333", color: "#fff", fontSize: "18px" }}>
+                  Output
+                </h3>
+                <pre
+                  style={{
+                    margin: 0,
+                    padding: "10px",
+                    backgroundColor: "#eaeaea",
+                    border: "1px solid #ccc",
+                    fontSize: "16px",
+                    lineHeight: "1.5",
+                    whiteSpace: "pre-wrap", // Ensures line breaks are preserved
+                  }}
+                >
+                  {outputText2}
                 </pre>
               </div>
           </section>
