@@ -46,7 +46,8 @@ export async function GET(req, { params }) {
                 { status: 400 }
             );
         }
-        const response = await getVerdict(user.name, slug);
+        const email = "susferwarmup+" + user["username"] + "@gmail.com";
+        const response = await getVerdict(email, slug);
         if (response.error) {
             return new Response(
                 JSON.stringify({ error: response.error }),

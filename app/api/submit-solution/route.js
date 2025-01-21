@@ -44,7 +44,9 @@ export async function POST(req) {
     }
     try {
       const { day, language, code } = await req.json();
-      const response = await submitCode(user.name, day, language, code);
+      const email = "susferwarmup+" + user["username"] + "@gmail.com";
+
+      const response = await submitCode(email, day, language, code);
       if (response.error) {
         return new Response(
           JSON.stringify({ error: response.error }),
