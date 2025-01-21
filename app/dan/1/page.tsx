@@ -6,8 +6,62 @@ import FloatingCircles from "@/app/components/FloatingCircles"
 import Navbar from "@/app/components/Navbar"
 import { VerdictDisplay } from "@/components/VerdictDisplay"
 import React, { useState, useEffect } from 'react'
+import MarkdownRenderer from "@/app/components/MarkdownRenderer"
 
 const DAY = 1;
+const markdownContent = 
+`
+## Opis
+
+Zadan je težinski neusmjereni graf. Graf ima $n$ čvorova i $m$  bridova. 
+Vi se nalazite u čvoru $st$, a kristal znanja se nalazi u čvoru $em$. 
+Zadatak je jednostavan; pronađite duljinu najkraćeg puta od $st$ do $em$, ili javite da takav put ne postoji.
+
+## Ulazni podatci
+Prva linija sadrži dva cijela broja razdvojena razmakom - $n$ i $m$ ($2 \\leq n \\leq 10^5$, $1 \\leq m \\leq 2*10^5$) 
+Sljedećih $m$ linija opisuje bridove u grafu, $i$-ta linija sadrži tri cijela broja razdvojena razmakom - $u_i$, $v_i$, $x_i$. Linija označava da postoji brid od čvora $u_i$ do $v_i$ težine $2^{x_i}$.
+
+Zadnja linija sadrži dva cijela broja, $st$ i $em$, čvor u kojem se vi nalazite i čvor u kojem se nalazi kristal, redom. 
+Bridovi su označeni brojevima od $1$ do $n$. Graf je jednostavan. 
+
+## Izlazni podatci
+
+U prvom retku ispišite ostatak dijeljenja duljine najkraćeg puta s $1000000007  (10^9+7)$ ako on postoji, a "GAMES" inače. 
+
+## Bodovanje
+- U test primjerima vrijednima $7$ bodova, vrijedit će $x_i = 0$ za svaki $i$. 
+- U test primjerima vrijednima dodatnih $9$ bodova, vrijedit će $x_i \\leq 40$ za svaki $i$
+- U test primjerima vrijednima dodatnih $12$ bodova, vrijedit će $x_i \\leq 100$ za svaki $i$
+- U test primjerima vrijednima dodatnih $13$ bodova, vrijedit će $x_i \\leq 500$ za svaki $i$
+
+## Test primjeri 
+#### Ulaz
+\`\`\`
+4 4
+1 4 2
+1 2 0
+2 3 0
+3 4 0
+1 4
+\`\`\`
+#### Izlaz 
+\`\`\`
+3 
+\`\`\`
+
+#### Ulaz
+\`\`\` 
+4 2
+1 2 0
+3 4 1
+1 4
+\`\`\`
+
+#### Izlaz 
+\`\`\`
+GAMES
+\`\`\`
+`;
 
 interface FormDataType {
   day: number;
@@ -117,130 +171,16 @@ export default function ProgramiranjeDay() {
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, []);
 
-
-  const inputText = 
-`4 4
-1 4 2
-1 2 0
-2 3 0
-3 4 0
-1 4`;
-
-const outputText = 
-`3`;
-
-const inputText2 = 
-`4 2
-1 2 0
-3 4 1
-1 4`;
-
-const outputText2 = 
-`GAMES`;
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800">
       <FloatingCircles />
       <Navbar />
       <div className="container mx-auto px-4 py-8">
         <div className="bg-white bg-opacity-90 backdrop-blur-sm p-8 rounded-xl shadow-2xl relative z-10 max-w-5xl mx-auto">
-          <h1 className="text-3xl font-bold mb-6 text-center">Dan 1: Programiranje</h1>
+          <h1 className="text-3xl font-bold mb-6 text-center">Dan 1: Kristali</h1>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">Opis Zadatka</h2>
-            <p className="text-gray-700">
-              Zadan je težinski neusmjereni graf. Graf ima <strong>n</strong> čvorova i <strong>m</strong> bridova.
-              Vi se nalazite u čvoru <strong>st</strong>, a kristal znanja se nalazi u čvoru <strong>em</strong>.
-              Zadatak je jednostavan; pronađite najkraći put od <strong>st</strong> do <strong>em</strong>, ili javite da takav put ne postoji.<br /><br />
-
-              <strong>Ulazni podaci</strong><br />
-              Prva linija sadrži dva cijela broja razdvojena razmakom - <strong>n</strong> i <strong>m</strong>. <br />
-              Sljedećih <strong>m</strong> linija opisuje bridove u grafu. <strong>i</strong>-ta linija sadrži tri cijela broja razdvojena razmakom - <strong>u_i</strong>, <strong>v_i</strong>, <strong>x_i</strong>. Linija označava da postoji brid od čvora <strong>u_i</strong> do <strong>v_i</strong> težine 2^(<strong>x_i</strong>)
-              Zadnja linija sadrži dva cijela broja, <strong>st</strong> i <strong>em</strong>, čvor u kojem se vi nalazite i čvor u kojem se nalazi kristal, redom.
-              Bridovi su označeni brojevima od 1 do <strong>n</strong>. Graf je jednostavan. <br /> <br />
-
-              <strong>Izlazni podaci</strong><br />
-              U prvom retku ispišite ostatak dijeljenja duljine najkraćeg puta s <strong>1000000007 (10^9+7)</strong> ako on postoji, a <strong>"GAMES"</strong> inače.
-              Ako put postoji, u drugi redak ispišite cijeli broj <strong>k</strong> - broj čvorova u najkraćem putu od čvora <strong>st</strong> do čvora <strong>em</strong>.
-              U treći redak ispišite <strong>k</strong> razmakom odijeljenih cijelih brojeva, oznake čvorova u najkraćem putu redom kojim ih posjećujete. Prvi čvor mora biti <strong>st</strong>, a zadnji <strong>em</strong>.
-              Ako postoji više najkraćih puteva, ispišite bilo koji.
-            </p>
-
-            <div style={{ marginBottom: "20px", marginTop: "20px" }}>
-                <h3 style={{ margin: 0, padding: "10px", backgroundColor: "#333", color: "#fff", fontSize: "18px" }}>
-                  Input
-                </h3>
-                <pre
-                  style={{
-                    margin: 0,
-                    padding: "10px",
-                    backgroundColor: "#eaeaea",
-                    border: "1px solid #ccc",
-                    fontSize: "16px",
-                    lineHeight: "1.5",
-                    whiteSpace: "pre-wrap", // Ensures line breaks are preserved
-                  }}
-                >
-                  {inputText}
-                </pre>
-              </div>
-
-              <div style={{ marginBottom: "20px" }}>
-                <h3 style={{ margin: 0, padding: "10px", backgroundColor: "#333", color: "#fff", fontSize: "18px" }}>
-                  Output
-                </h3>
-                <pre
-                  style={{
-                    margin: 0,
-                    padding: "10px",
-                    backgroundColor: "#eaeaea",
-                    border: "1px solid #ccc",
-                    fontSize: "16px",
-                    lineHeight: "1.5",
-                    whiteSpace: "pre-wrap", // Ensures line breaks are preserved
-                  }}
-                >
-                  {outputText}
-                </pre>
-              </div>
-
-              <div style={{ marginBottom: "20px", marginTop: "20px" }}>
-                <h3 style={{ margin: 0, padding: "10px", backgroundColor: "#333", color: "#fff", fontSize: "18px" }}>
-                  Input
-                </h3>
-                <pre
-                  style={{
-                    margin: 0,
-                    padding: "10px",
-                    backgroundColor: "#eaeaea",
-                    border: "1px solid #ccc",
-                    fontSize: "16px",
-                    lineHeight: "1.5",
-                    whiteSpace: "pre-wrap", // Ensures line breaks are preserved
-                  }}
-                >
-                  {inputText2}
-                </pre>
-              </div>
-
-              <div style={{ marginBottom: "20px" }}>
-                <h3 style={{ margin: 0, padding: "10px", backgroundColor: "#333", color: "#fff", fontSize: "18px" }}>
-                  Output
-                </h3>
-                <pre
-                  style={{
-                    margin: 0,
-                    padding: "10px",
-                    backgroundColor: "#eaeaea",
-                    border: "1px solid #ccc",
-                    fontSize: "16px",
-                    lineHeight: "1.5",
-                    whiteSpace: "pre-wrap", // Ensures line breaks are preserved
-                  }}
-                >
-                  {outputText2}
-                </pre>
-              </div>
+          <MarkdownRenderer content={markdownContent} />
           </section>
 
           <form className="space-y-6" onSubmit={onSubmit}>
