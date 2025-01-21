@@ -127,9 +127,7 @@ export default function ProgramiranjeDay() {
 1 4`;
 
 const outputText = 
-`3
-4
-1 2 3 4`;
+`3`;
 
 const inputText2 = 
 `4 2

@@ -1,6 +1,6 @@
 import { getSession } from '@auth0/nextjs-auth0';
 
-const problemIdByDay = { 1: "390890364392706054", 2: "390890364392706054", 3: "390890364392706054", 4: "390890364392706054", 5: "390890364392706054" }
+const problemIdByDay = { 1: "404030759741952000", 2: "390890364392706054", 3: "390890364392706054", 4: "390890364392706054", 5: "390890364392706054" }
 
 async function getToken(email) {
     let response = await fetch('https://api.kontestis.ac/api/auth/managed/login', {

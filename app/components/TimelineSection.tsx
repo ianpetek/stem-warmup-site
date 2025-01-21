@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button"
 
 // Timeline data
 const timelineData = [
-  { day: 'Ponedjeljak', date: '2025-01-20', topic: 'Programiranje', slug: '1' },
-  { day: 'Utorak', date: '2025-01-21', topic: 'Optimizacija', slug: '2' },
-  { day: 'Srijeda', date: '2025-01-22', topic: 'CTF', slug: '3' },
-  { day: 'Četvrtak', date: '2025-01-23', topic: 'Matematika: Back to Basics', slug: '4' },
-  { day: 'Petak', date: '2025-01-24', topic: 'Matematika & Programiranje Crossover', slug: '5' },
+  { day: 'Srijeda', date: '2025-01-22', topic: 'Programiranje', slug: '1' },
+  { day: 'Četvrtak', date: '2025-01-23', topic: 'Optimizacija', slug: '2' },
+  { day: 'Petak', date: '2025-01-24', topic: 'CTF', slug: '3' },
+  { day: 'Subota', date: '2025-01-25', topic: 'Matematika: Back to Basics', slug: '4' },
+  { day: 'Nedjelja', date: '2025-01-26', topic: 'Matematika & Programiranje Crossover', slug: '5' },
 ]
 
 export default function TimelineSection() {
@@ -16,6 +16,7 @@ export default function TimelineSection() {
   return (
     <div className="py-16 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h3 className='mt-10 mb-10 text-yellow-600 text-center'>OBAVIJEST: nažalost radi tehničkih poteškoća sa evaluacijom početak natjecanja je pomaknut na srijedu.</h3>
         <h2 className="text-3xl font-bold text-center mb-12">Raspored Natjecanja</h2>
         <div className="relative">
           <div className="hidden md:block absolute left-1/2 border-r-2 border-blue-300 h-full"></div>
