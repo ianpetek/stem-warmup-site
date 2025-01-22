@@ -12,17 +12,18 @@ const timelineData = [
 
 export default function TimelineSection() {
   const today = new Date(); // Current date
+  const todayDate = new Date(today.getFullYear(), today.getMonth(), today.getDate()); // Normalize to date only
 
   return (
     <div className="py-16 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h3 className='mt-10 mb-10 text-yellow-600 text-center'>OBAVIJEST: nažalost radi tehničkih poteškoća sa evaluacijom početak natjecanja je pomaknut na srijedu.</h3>
         <h2 className="text-3xl font-bold text-center mb-12">Raspored Natjecanja</h2>
         <div className="relative">
           <div className="hidden md:block absolute left-1/2 border-r-2 border-blue-300 h-full"></div>
           {timelineData.map((item, index) => {
             const eventDate = new Date(item.date); // Convert event date
-            const isAvailable = today >= eventDate; // Check if the date has arrived
+            const normalizedEventDate = new Date(eventDate.getFullYear(), eventDate.getMonth(), eventDate.getDate()); // Normalize to date only
+            const isAvailable = todayDate >= normalizedEventDate; // Compare only dates
 
             return (
               <div key={index} className="mb-8 flex flex-col md:flex-row md:justify-between items-start md:items-center">
@@ -32,7 +33,7 @@ export default function TimelineSection() {
                   </div>
                   <div className="md:text-right">
                     <h3 className="font-bold text-lg">{item.day}</h3>
-                    <p className="text-gray-600">{new Intl.DateTimeFormat('hr-HR', { day: '2-digit', month: '2-digit' }).format(new Date(item.date))}</p>
+                    <p className="text-gray-600">{new Intl.DateTimeFormat('hr-HR', { day: '2-digit', month: '2-digit' }).format(eventDate)}</p>
                     <p className="text-gray-800">{item.topic}</p>
                   </div>
                 </div>
