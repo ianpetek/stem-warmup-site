@@ -19,8 +19,8 @@ export async function middleware(req) {
     const pageId = match[1];
     const eventDates = {
       1: '2025-01-22',
-      2: '2025-01-23',
-      3: '2025-01-24',
+      2: '2025-01-22',
+      3: '2025-01-22',
       4: '2025-01-25',
       5: '2025-01-26',
     };
