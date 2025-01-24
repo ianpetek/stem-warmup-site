@@ -17,6 +17,7 @@ export default function TimelineSection() {
   return (
     <div className="py-16 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h3 className="text-yellow-600 mb-10 text-center">OBAVIJEST: natjecanje će nakon izbacivanja svih zadataka trajati još dodatna 2 dana</h3>
         <h2 className="text-3xl font-bold text-center mb-12">Raspored Natjecanja</h2>
         <div className="relative">
           <div className="hidden md:block absolute left-1/2 border-r-2 border-blue-300 h-full"></div>
