@@ -1,3 +1,10 @@
 {
-
+  "testtim": {
+    "pwn": 33
+  },
+  "organizatori": {
+    "crypto": 33,
+    "pwn": 33,
+    "web": 33
+  }
 }

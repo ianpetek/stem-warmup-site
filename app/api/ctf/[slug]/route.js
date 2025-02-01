@@ -3,7 +3,7 @@ import path from 'path';
 import { getSession } from '@auth0/nextjs-auth0';
 
 // Path to JSON file for storing user scores
-const scoresFilePath = path.join("/home/ian/dev/susfer/stem-warmup-site/scores.json");
+const scoresFilePath = path.join("/root/stem-warmup-site/scores.json");
 
 // Hardcoded flags for CTF problems
 const FLAGS = {
